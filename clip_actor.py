@@ -1,4 +1,5 @@
 import os
+print("start")
 import clip
 from tqdm import tqdm
 import kaolin.ops.mesh
@@ -12,14 +13,15 @@ import argparse
 from pathlib import Path
 import torch.nn.functional as F
 import warnings
-warnings.simplefilter("ignore", UserWarning)
+#warnings.simplefilter("ignore", UserWarning)
+print("importing torchvision, pytorch3d, etc")
 from torchvision import transforms
 from smplx import SMPLX, SMPLH, SMPL
 from pytorch3d.structures.meshes import Meshes
 from pytorch3d.loss import mesh_laplacian_smoothing
 import time
 import wandb
-
+print("imported main stuff")
 import motion_retrieval.retrieval_ as rtr
 from motion_retrieval.sent2vec import Sent2Vec
 import cfg as cfg
@@ -29,6 +31,7 @@ from mesh import HumanMesh
 from utils import device, clip_model, create_video
 
 
+print("ran imports")
 def parse_args():
     parser = argparse.ArgumentParser()
 
